@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block titulo %}
+Clientes
+{% endblock %}
+
+{% block conteudo %}
+<h2 style="text-align: center;"> Clientes </h2>
+<hr>
+<table class="table table-hover table-dark table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Rua</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in cliente %}
+        <tr>
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.name}}</td>
+            <td>{{cliente.cell_contact}}</td>
+            <td>{{cliente.state_address}}</td>
+            <td>{{cliente.city_address}}</td>
+            <td>{{cliente.state_address}}</td>
+            <th>{{cliente.email}}</th>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block titulo %}
+Equipamentos
+{% endblock %}
+
+{% block conteudo %}
+<h2 style="text-align: center;"> Equipamentos </h2>
+<hr>
+<table class="table table-hover table-dark table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Fabricante</th>
+            <th scope="col">Tipo de Equipamento</th>
+            <th scope="col">Descrição do Problema</th>
+            <th scope="col">Data de Entrada</th>
+            <th scope="col">Data de Saída</th>
+            <th scope="col">Descrição Reparo</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for equipamento in equipamento %}
+        <tr>
+            <td>{{equipamento.id}}</td>
+            <td>{{equipamento.name}}</td>
+            <td>{{equipamento.model}}</td>
+            <td>{{equipamento.manufacturer}}</td>
+            <td>{{equipamento.equipament_type_id}}</td>
+            <td>{{equipamento.problem_description}}</td>
+            <td>{{equipamento.repair_description}}</td>
+            <td>{{equipamento.input.date}}</td>
+            <td>{{equipamento.output.date}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
